@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUSD - TON USD</title>
     <!-- Tailwind CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.4/tailwind.min.css" rel="stylesheet">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -139,7 +140,7 @@
                     <p>TUSD (TON USD) is a stablecoin designed to bring stability and transparency to the cryptocurrency world. Backed by the power of the TON Network, TUSD offers unparalleled security and efficiency for all your digital transactions.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="img/about-screen1.png" alt="About TUSD" class="about-img">
+                    <img src="img/about-screen1.jpg" alt="About TUSD" class="about-img">
                 </div>
             </div>
         </div>
@@ -158,21 +159,21 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-gray-100">
+    <section id="contact" class="py-12">
         <div class="container">
             <h2 class="h2 font-bold text-center mb-8">Contact Us</h2>
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <form>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter your name">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <label for="message">Message</label>
                             <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
                         </div>
@@ -184,7 +185,7 @@
     </section>
 
     <!-- Community Section -->
-    <section id="community" class="py-12">
+    <section id="community" class="py-12 bg-gray-100">
         <div class="container">
             <h2 class="h2 font-bold text-center mb-8">Join Our Community</h2>
             <div class="text-center">
@@ -205,6 +206,7 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
