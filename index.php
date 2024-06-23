@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUSD - TON USD</title>
-    
     <!-- Tailwind CSS CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS CDN -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Font Awesome CDN -->
@@ -52,7 +52,72 @@
         .fadeInUp {
             animation-name: fadeInUp;
         }
-    </style>
+        
+        /* Token Metrics Section Styles */
+    #token-info {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    #token-info h2 {
+        color: #ffffff;
+    }
+
+    .bg-gray-700 {
+        background-color: #4a5568; /* Adjust as per your color scheme */
+    }
+
+    .bg-gray-800 {
+        background-color: #2d3748; /* Adjust as per your color scheme */
+    }
+
+    .text-green-500 {
+        color: #48bb78; /* Adjust as per your color scheme */
+    }
+
+    .rounded-lg {
+        border-radius: 0.5rem; /* Adjust border radius as needed */
+    }
+
+    .p-4 {
+        padding: 1rem;
+    }
+
+    .text-xl {
+        font-size: 1.25rem; /* Adjust font size as needed */
+    }
+
+    .text-2xl {
+        font-size: 1.5rem; /* Adjust font size as needed */
+    }
+
+    .font-semibold {
+        font-weight: 600;
+    }
+
+    .justify-items-center {
+        justify-items: center;
+    }
+
+    @media (min-width: 640px) {
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 768px) {
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+</style>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -157,6 +222,47 @@
     </div>
 </section>
 
+                 <!-- Token Metrics Section -->
+<section id="token-info" class="py-12 bg-gray-100 text-gray-900">
+    <div class="container">
+        <h2 class="h2 font-bold text-center mb-8">Token Metrics</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+
+            <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
+                <h3 class="text-xl font-semibold mb-2">Price</h3>
+                <p id="price" class="text-2xl font-bold text-green-500">$0.0000015</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
+                <h3 class="text-xl font-semibold mb-2">24h Volume</h3>
+                <p id="volume" class="text-2xl font-bold text-green-500">$00.01</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
+                <h3 class="text-xl font-semibold mb-2">Liquidity</h3>
+                <p id="liquidity" class="text-2xl font-bold text-green-500">$00.01</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
+                <h3 class="text-xl font-semibold mb-2">Supply</h3>
+                <p id="supply" class="text-2xl font-bold text-green-500">0,000,000</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
+                <h3 class="text-xl font-semibold mb-2">Market Cap</h3>
+                <p id="marketcap" class="text-2xl font-bold text-green-500">$00.01K</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
 
     <!-- Market Section -->
     <section id="market" class="py-12 bg-gray-100 market-section">
@@ -225,5 +331,84 @@
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    
+     <script>
+async function fetchTokenData() {
+    const apiUrl = 'https://api.geckoterminal.com/api/v2/networks/ton/tokens/EQDWnAbLVdQXKJhevqFcTwSdTAUHguvOzWOab8Oyfqzoa_0r';
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const json = await response.json();
+        const data = json.data.attributes; // Accessing the attributes object directly
+
+        // Correctly access nested properties using the updated paths
+        updateDOM('price', data.price_usd);
+        updateDOM('supply', data.total_supply);
+        updateDOM('volume', data.volume_usd.h24); // Correctly accessing the 24h volume
+        updateDOM('liquidity', data.total_reserve_in_usd);
+        // The API response does not contain a direct market_cap_usd, using fdv_usd as a fallback
+        updateDOM('marketcap', data.fdv_usd); // Using fully diluted valuation in place of market cap if market cap is null
+    } catch (error) {
+        console.error('Fetching token data failed:', error);
+        document.querySelectorAll('.info-box p').forEach(p => p.innerText = 'Data unavailable');
+    }
+}
+
+function updateDOM(elementId, value) {
+    const element = document.querySelector(`#${elementId}`);
+    if (element && value !== undefined) { // Check for undefined to allow zero values
+        let formattedValue;
+        switch (elementId) {
+            
+            case 'price':
+                // Assuming price needs to be detailed due to its potentially small value
+                formattedValue = parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                element.innerText = `$${formattedValue}`;
+                break;
+            
+            case 'volume':
+                // Round 24h volume to the nearest integer and format with commas
+                formattedValue = parseFloat(value).toFixed(0); // Ensure it's an integer
+                formattedValue = parseInt(formattedValue).toLocaleString(); // Format with commas
+                element.innerText = `$${formattedValue}`;
+            break;
+
+
+                
+             case 'liquidity':
+                // Double the liquidity value and convert it to a whole number without decimal places
+                formattedValue = Math.round(parseFloat(value)).toLocaleString();
+                element.innerText = `$${formattedValue}`;
+            break;
+
+            case 'supply':
+                // Remove 9 decimals from the total supply and format. Append "UZT" instead of "$".
+                formattedValue = (parseFloat(value) / Math.pow(10, 9)).toLocaleString(undefined, { maximumFractionDigits: 0 }) + " TUSD";
+                element.innerText = formattedValue;
+            break;
+
+            case 'marketcap':
+                // Display market cap without decimal accuracy
+                formattedValue = parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+                element.innerText = `$${formattedValue}`;
+            break;
+
+            
+            default:
+                formattedValue = parseFloat(value).toLocaleString();
+                element.innerText = `$${formattedValue}`;
+        }
+    } else {
+        console.warn(`Missing data or element for ${elementId}`);
+    }
+}
+
+window.onload = fetchTokenData;
+
+</script>
+    
 </body>
 </html>
