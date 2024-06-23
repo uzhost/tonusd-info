@@ -53,69 +53,100 @@
             animation-name: fadeInUp;
         }
         
-        /* Token Metrics Section Styles */
-    #token-info {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
+       /* Token Metrics Section Styles */
+#token-info {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
 
-    #token-info h2 {
-        color: #ffffff;
-    }
+#token-info h2 {
+    color: #000000; /* Adjusted to black (#000000) */
+}
 
-    .bg-gray-700 {
-        background-color: #4a5568; /* Adjust as per your color scheme */
-    }
+.grid {
+    display: grid;
+}
 
-    .bg-gray-800 {
-        background-color: #2d3748; /* Adjust as per your color scheme */
-    }
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
 
-    .text-green-500 {
-        color: #48bb78; /* Adjust as per your color scheme */
-    }
+.sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-    .rounded-lg {
-        border-radius: 0.5rem; /* Adjust border radius as needed */
-    }
+.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-    .p-4 {
-        padding: 1rem;
-    }
+.gap-4 {
+    gap: 1rem; /* Adjust gap size as needed */
+}
 
-    .text-xl {
-        font-size: 1.25rem; /* Adjust font size as needed */
-    }
+.bg-white {
+    background-color: #ffffff; /* Adjust background color as per your design */
+}
 
-    .text-2xl {
-        font-size: 1.5rem; /* Adjust font size as needed */
-    }
+.p-4 {
+    padding: 1rem;
+}
 
-    .font-semibold {
-        font-weight: 600;
-    }
+.rounded-lg {
+    border-radius: 0.5rem; /* Adjust border radius as needed */
+}
 
-    .justify-items-center {
-        justify-items: center;
-    }
+.text-center {
+    text-align: center;
+}
 
-    @media (min-width: 640px) {
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-    }
+.text-xl {
+    font-size: 1.25rem; /* Adjust font size as needed */
+}
 
-    @media (min-width: 768px) {
-        .grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-    }
+.text-2xl {
+    font-size: 1.5rem; /* Adjust font size as needed */
+}
 
-    @media (min-width: 1024px) {
-        .grid-cols-3 {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-green-500 {
+    color: #48bb78; /* Adjust text color as per your design */
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adjust shadow as needed */
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+@media (min-width: 640px) {
+    .sm\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
+
+@media (min-width: 768px) {
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 </style>
 
 </head>
@@ -222,11 +253,10 @@
     </div>
 </section>
 
-                 <!-- Token Metrics Section -->
+               <!-- Token Metrics Section -->
 <section id="token-info" class="py-12 bg-gray-100 text-gray-900">
     <div class="container">
-        <h2 class="h2 font-bold text-center mb-8">Token Metrics</h2>
-        
+        <h2 class="text-3xl font-bold text-center mb-8">Token Metrics</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
 
             <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
@@ -257,6 +287,7 @@
         </div>
     </div>
 </section>
+
 
 
 
@@ -365,7 +396,7 @@ function updateDOM(elementId, value) {
             
             case 'price':
                 // Assuming price needs to be detailed due to its potentially small value
-                formattedValue = parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                formattedValue = parseFloat(value).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 4 });
                 element.innerText = `$${formattedValue}`;
                 break;
             
@@ -385,7 +416,7 @@ function updateDOM(elementId, value) {
             break;
 
             case 'supply':
-                // Remove 9 decimals from the total supply and format. Append "UZT" instead of "$".
+                // Remove 9 decimals from the total supply and format. Append "TUSD" instead of "$".
                 formattedValue = (parseFloat(value) / Math.pow(10, 9)).toLocaleString(undefined, { maximumFractionDigits: 0 }) + " TUSD";
                 element.innerText = formattedValue;
             break;
