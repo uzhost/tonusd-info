@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUSD - TON USD</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -26,61 +28,75 @@
         .progress-bar-custom {
             background-color: #4caf50; /* Custom color */
         }
-        
         .market-section iframe {
             border: none;
             width: 100%;
             height: 600px;
         }
+        .animated {
+            animation-duration: 1.5s;
+            animation-fill-mode: both;
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translate3d(0, 40px, 0);
+                opacity: 0;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+        }
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
     </style>
 </head>
 <body>
-    
-   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="img/tusd-logo.png" alt="TUSD Logo" style="height: 50px; margin-right: 10px;">
-            <span>TUSD - TON USD</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/tusd-logo.png" alt="TUSD Logo" style="height: 50px; margin-right: 10px;">
+                <span>TUSD - TON USD</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#market">Market</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#community">Community</a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#community">Community</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section flex items-center justify-center text-white text-center">
-        <div class="container">
-            <h1 class="text-4xl font-bold">Welcome to TUSD - TON USD</h1>
-            <p class="mt-4 text-xl">The future of digital finance</p>
+    <header class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+        <div class="container animated fadeInUp">
+            <h1 class="display-4 font-bold">Welcome to TUSD - TON USD</h1>
+            <p class="mt-4 h4">The future of digital finance</p>
             <a href="#about" class="btn btn-primary mt-4">Learn More</a>
-            
+
             <!-- Hard Cap Information -->
             <div class="mt-8">
-                <h2 class="text-2xl font-bold">Hard Cap Gathering</h2>
+                <h2 class="h2 font-bold">Hard Cap Gathering</h2>
                 <p class="mt-2">We are currently gathering funds to reach our hard cap goal.</p>
-                
+
                 <!-- Progress Bar -->
                 <div class="progress mt-4" style="height: 30px;">
                     <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
@@ -93,21 +109,21 @@
     <!-- Features Section -->
     <section id="features" class="py-12 bg-gray-100">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Features</h2>
+            <h2 class="h2 font-bold text-center mb-8">Features</h2>
             <div class="row">
                 <div class="col-md-4 text-center">
                     <i class="fas fa-lock fa-3x mb-4"></i>
-                    <h3 class="text-xl font-bold">Secure & Transparent</h3>
+                    <h3 class="h5 font-bold">Secure & Transparent</h3>
                     <p class="mt-2">Your investments are secure with our state-of-the-art technology.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <i class="fas fa-rocket fa-3x mb-4"></i>
-                    <h3 class="text-xl font-bold">Fast Transactions</h3>
+                    <h3 class="h5 font-bold">Fast Transactions</h3>
                     <p class="mt-2">Experience lightning-fast transactions with TUSD.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <i class="fas fa-globe fa-3x mb-4"></i>
-                    <h3 class="text-xl font-bold">Global Reach</h3>
+                    <h3 class="h5 font-bold">Global Reach</h3>
                     <p class="mt-2">Access TUSD from anywhere in the world.</p>
                 </div>
             </div>
@@ -117,7 +133,7 @@
     <!-- About Section -->
     <section id="about" class="py-12">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">About TUSD</h2>
+            <h2 class="h2 font-bold text-center mb-8">About TUSD</h2>
             <div class="row">
                 <div class="col-md-6">
                     <p>TUSD (TON USD) is a stablecoin designed to bring stability and transparency to the cryptocurrency world. Backed by the power of the TON Network, TUSD offers unparalleled security and efficiency for all your digital transactions.</p>
@@ -128,11 +144,11 @@
             </div>
         </div>
     </section>
-    
-     <!-- Market Section -->
+
+    <!-- Market Section -->
     <section id="market" class="py-12 bg-gray-100 market-section">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Market Overview</h2>
+            <h2 class="h2 font-bold text-center mb-8">Market Overview</h2>
             <div class="row">
                 <div class="col-12">
                     <iframe height="600" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed" src="https://www.geckoterminal.com/ton/pools/EQDLtfchnWcWKCFU8L0J_SYT8Smxa1ilx6Y1pmtqrw6FI_Rg?embed=1&info=1&swaps=1" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
@@ -144,7 +160,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-12 bg-gray-100">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+            <h2 class="h2 font-bold text-center mb-8">Contact Us</h2>
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <form>
@@ -170,7 +186,7 @@
     <!-- Community Section -->
     <section id="community" class="py-12">
         <div class="container">
-            <h2 class="text-3xl font-bold text-center mb-8">Join Our Community</h2>
+            <h2 class="h2 font-bold text-center mb-8">Join Our Community</h2>
             <div class="text-center">
                 <a href="https://twitter.com/yourtwitterhandle" class="text-blue-500 text-2xl mx-2">
                     <i class="fab fa-twitter"></i>
@@ -190,7 +206,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"></script>
 </body>
 </html>
