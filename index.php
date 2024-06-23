@@ -261,7 +261,7 @@
 
             <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
                 <h3 class="text-xl font-semibold mb-2">Price</h3>
-                <p id="price" class="text-2xl font-bold text-green-500">$0.0000015</p>
+                <p id="price" class="text-2xl font-bold text-green-500">$0.0001</p>
             </div>
 
             <div class="bg-white p-4 rounded-lg text-center shadow-md flex flex-col justify-center items-center">
@@ -410,7 +410,7 @@ function updateDOM(elementId, value) {
 
                 
              case 'liquidity':
-                // Double the liquidity value and convert it to a whole number without decimal places
+                // The liquidity value and convert it to a whole number without decimal places
                 formattedValue = Math.round(parseFloat(value)).toLocaleString();
                 element.innerText = `$${formattedValue}`;
             break;
