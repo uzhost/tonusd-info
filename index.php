@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUSD - TON USD</title>
-    <!-- Tailwind CSS CDN -->
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwind CSS CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS CDN -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Font Awesome CDN -->
@@ -96,7 +96,7 @@
 
             <!-- Hard Cap Information -->
             <div class="mt-8">
-                <h2 class="h2 font-bold">Hard Cap Gathering</h2>
+                <h2 class="h2 font-bold">Hard Cap: $100K</h2>
                 <p class="mt-2">We are currently gathering funds to reach our hard cap goal.</p>
 
                 <!-- Progress Bar -->
@@ -132,20 +132,31 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-12">
-        <div class="container">
-            <h2 class="h2 font-bold text-center mb-8">About TUSD</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>TUSD (TON USD) is a stablecoin designed to bring stability and transparency to the cryptocurrency world. Backed by the power of the TON Network, TUSD offers unparalleled security and efficiency for all your digital transactions.</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="img/about-screen1.png" alt="About TUSD" class="about-img">
-                </div>
+   <!-- About Section -->
+<section id="about" class="py-12 bg-gray-100">
+    <div class="container">
+        <h2 class="h2 font-bold text-center mb-8">About TUSD</h2>
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <p>🚀 <strong>TUSD (TON USD)</strong> - Your gateway to a stable, transparent, and secure digital financial future! 🌐<br><br>
+                
+                💎 <strong>Stability & Transparency:</strong> TUSD is designed to eliminate volatility in the crypto world, ensuring your investments remain steady and reliable.<br><br>
+                
+                🔐 <strong>Unmatched Security:</strong> Powered by the robust TON Network, TUSD guarantees top-notch security for all your digital transactions, giving you peace of mind.<br><br>
+                
+                ⚡ <strong>Efficient Transactions:</strong> Experience lightning-fast transactions with zero hassles, making your financial operations smoother than ever.<br><br>
+                
+                Join the revolution in digital finance with TUSD today! 💸💪<br><br>
+                
+                <span class="text-blue-500">#Crypto #Stablecoin #DigitalFinance #TUSD #TONNetwork #Blockchain #CryptoSecurity</span></p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="img/about-screen1.png" alt="About TUSD" class="about-img img-fluid rounded shadow">
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Market Section -->
     <section id="market" class="py-12 bg-gray-100 market-section">
@@ -160,30 +171,33 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12">
-        <div class="container">
-            <h2 class="h2 font-bold text-center mb-8">Contact Us</h2>
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <form>
-                        <div class="form-group mb-3">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
+<section id="contact" class="py-12 bg-gray-100">
+    <div class="container">
+        <h2 class="h2 font-bold text-center mb-8">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <form action="process_form.php" method="POST">
+                    <div class="form-group mb-4">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Community Section -->
     <section id="community" class="py-12 bg-gray-100">
