@@ -339,19 +339,23 @@
 </section>
 
     <!-- Community Section -->
-    <section id="community" class="py-12 bg-gray-100">
-        <div class="container">
-            <h2 class="h2 font-bold text-center mb-8">Join Our Community</h2>
-            <div class="text-center">
-                <a href="https://twitter.com/yourtwitterhandle" class="text-blue-500 text-2xl mx-2">
+<section id="community" class="py-12 bg-gray-100">
+    <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-8">Join Our Community</h2>
+        <div class="text-center">
+            <p class="text-lg mb-4">Connect with us on social media and stay updated with the latest news!</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://twitter.com/yourtwitterhandle" class="text-blue-500 text-3xl mx-2 hover:text-blue-600 transition duration-300 ease-in-out">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://t.me/tonusdinfo" class="text-blue-500 text-2xl mx-2">
+                <a href="https://t.me/tonusdinfo" class="text-blue-500 text-3xl mx-2 hover:text-blue-600 transition duration-300 ease-in-out">
                     <i class="fab fa-telegram"></i>
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="py-4 bg-gray-800 text-white text-center">
