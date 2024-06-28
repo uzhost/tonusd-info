@@ -291,12 +291,6 @@
 </section>
 
 
-
-
-
-
-
-
     <!-- Market Section -->
     <section id="market" class="py-12 bg-gray-100 market-section">
         <div class="container">
@@ -309,7 +303,28 @@
         </div>
     </section>
 
-   <!-- Contact Section -->
+   
+   <!-- Contract Information Section -->
+<section id="contract-info" class="py-12 bg-gray-100">
+    <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-8">Contract Information</h2>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <p class="mb-4 text-xl">
+                <strong>Contract Address:</strong>
+                <span class="block mt-2 text-lg text-gray-700">EQDWnAbLVdQXKJhevqFcTwSdTAUHguvOzWOab8Oyfqzoa_0r</span>
+            </p>
+            <p class="text-lg mb-4">Check the contract on:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="https://tonviewer.com/EQDWnAbLVdQXKJhevqFcTwSdTAUHguvOzWOab8Oyfqzoa_0r" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">Tonviewer</a>
+                <a href="https://dyor.io/minter/EQDWnAbLVdQXKJhevqFcTwSdTAUHguvOzWOab8Oyfqzoa_0r" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">Dyor Minter</a>
+                <a href="https://ton.app/en/jettons/EQDWnAbLVdQXKJhevqFcTwSdTAUHguvOzWOab8Oyfqzoa_0r" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">Ton App</a>
+                <a href="https://coinmarketcap.com/dexscan/ton/EQAbGCA8nGRFvWrGHrz63xMYiniJKw1O22_-QuThiw8Wcavz/" target="_blank" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out">CoinMarketCap</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
 <section id="contact" class="py-12 bg-gray-100">
     <div class="container">
         <h2 class="h2 font-bold text-center mb-8">Contact Us</h2>
